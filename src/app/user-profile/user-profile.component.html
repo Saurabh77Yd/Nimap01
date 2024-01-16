@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">DEMO APP</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto ">
+                <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">ABOUT US</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">JOBS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">CLIENTS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">EMPLOYERS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">CONTACT US</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ------------------//////////------------------- -->
+
+<div class="container-fluid">
+    <div class="row justify-content-evenly mt-5" *ngFor="let user of users">
+        <div class="col-lg-2">
+            <img [src]="user.image" alt="">
+            <Button type="button" class="btn btn-warning all-btn" routerLink="/user-update/{{user.id}}">Edit
+                Photo</Button>
+            <Button type="button" class="btn btn-warning all-btn" routerLink="/user-update/{{user.id}}">Edit
+                Profile</Button>
+        </div>
+        <div class="col-lg-6">
+            <p> I'm {{user.name}} {{user.lastName}} and i am above {{user.age}} year
+                you can
+                send to email to {{user.email}}. I live in the state of {{user.state}} {{user.country}}. I like to play
+                hockey, football and reading books
+                and please send me
+                a newsletter. Please reach out me on my phone number {{user.phone}}.
+            </p>
+
+            <Button type="button" class="btn btn-success"> I Agree</Button>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

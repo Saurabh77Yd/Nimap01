@@ -1,0 +1,58 @@
+.head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgb(9, 126, 139);
+  color: white;
+  padding: 10px 50px;
+}
+
+.register-container {
+  left: 25%;
+  width: 60%;
+  position: absolute;
+  transform: translateY(30%);
+  z-index: 1;
+}
+.home-details {
+  width: 100%;
+  position: absolute;
+}
+.head {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.header {
+  font-size: 20px;
+}
+.form-page {
+  background-color: white;
+  padding: 30px 40px 30px 40px;
+}
+.input-image {
+  padding: 10px 20px 10px 20px;
+  margin-right: 150px;
+}
+.input-feild-1 {
+  margin-right: 30px;
+}
+.cancle-btn {
+  margin-right: 100px;
+}
+/* input feild */
+.img-input {
+  opacity: 0;
+  z-index: 1;
+  transform: translateY(100%);
+}
+/* text-input */
+.txt-input {
+  color: blue;
+  z-index: 0;
+  border: 0;
+  background: transparent;
+}
+#State,
+#Country {
+  width: 45%;
+}

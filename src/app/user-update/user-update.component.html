@@ -1,0 +1,77 @@
+<app-home style="opacity: 0.7" class="home-details"></app-home>
+<div class="conatainer register-container">
+    <div class="head">
+        <div class="header">Update Profile</div>
+        <fa-icon [icon]="icon" routerLink="/user-profile"></fa-icon>
+    </div>
+    <div class="container-fluid form-page">
+        <div class="row">
+            <div class="col-2 input-image">
+                <form [formGroup]="updateForm">
+                    <img [src]="url" alt="" width=200>
+                    <input type="file" (change)="onFileSelected($event)" accept="image/" class="img-input">
+
+                    <div *ngIf="updateForm.get('image')?.invalid && updateForm.get('image')?.touched">
+                        <p *ngIf="updateForm.get('image')?.errors?.['required']" style="color: red;">
+                            Image is required.</p>
+                        <p *ngIf="updateForm.get('image')?.errors?.['maxSize']" style="color: red;">
+                            Image size not more then 310 by 325px.</p>
+
+                    </div>
+                </form>
+                <button class="txt-input">Update Photo</button>
+                <p class="mt-3">Upload Image 310px*325px</p>
+            </div>
+            <div class="col-6 input-feild" [formGroup]="updateForm">
+                <input type="text" placeholder="First name" formControlName="name" class="input-feild-1">
+                <input type="text" placeholder="Last Name" formControlName="lastName"><br>
+                <span style="color: red;" *ngIf="name && name.invalid && name.touched">Name is not valid</span><br>
+                <input type="email" placeholder="Email" formControlName="email"><br>
+                <span style="color: red;" *ngIf="email && email.invalid && email.touched">Please Enter Valid
+                    Email</span><br>
+                <input type="text" name="" id="" placeholder="(541) 754-3010" formControlName="phone"><br>
+                <span style="color: red;" *ngIf="phone && phone.invalid && phone.touched">Phone numer is not
+                    valid</span><br>
+                <label for="slider">Age:</label>
+                <input type="range" (mouseleave)="getvalue(range.value)" class="mb-3" #range name="slider" min="20"
+                    max="60" step="1" value="20" formControlName="age"><br>
+                <p>Your age is {{displyAge}}</p>
+                <label for="State" class="mt-3">State</label><br>
+                <select name="location" id="State" formControlName="state">
+
+                    <option value="state1">state1</option>
+                    <option value="state2">state2</option>
+                    <option value="state3">state3</option>
+                    <option value="state4">state4</option>
+                </select><br>
+                <span style="color: red;" *ngIf="state && state.invalid && state.touched">Select the state</span><br>
+                <label for="Country">Country</label><br>
+                <select name="location" id="Country" formControlName="country">
+
+                    <option value="Country1">Country1</option>
+                    <option value="Country2">Country2</option>
+                    <option value="Country3">Country3</option>
+                    <option value="Country4">Country4</option>
+                </select><br>
+                <span style="color: red;" *ngIf="country && country.invalid && country.touched">Please select the
+                    country</span><br>
+                <input type="text" placeholder="Address" formControlName="address"><br>
+                <span style="color: red;" *ngIf="address && address.invalid && address.touched">Please fill the
+                    <address>
+                    </address>
+                </span><br>
+
+                <tag-input formControlName="tag"></tag-input><br>
+
+                <input type="checkbox" formControlName="checkbox"><span>subscribe to newsletter</span><br>
+                <span style="color: red;" *ngIf="checkbox && checkbox.invalid && checkbox.touched">Check the
+                    checkbox</span><br>
+                <button type="button" class="btn btn-outline-secondary cancle-btn"
+                    routerLink="/user-profile">Cancle</button>
+                <button type="button" class="btn btn-primary" [disabled]="updateForm.invalid"
+                    (click)="updateAccount()">Update</button>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+.carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+nav a {
+  color: #fff;
+}
+.nav-link.active {
+  border-top: 3px solid rgb(14, 14, 148);
+}
+
+.slider-item {
+  position: absolute;
+  top: 50%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+.slider-item h1 {
+  font-size: 50px;
+}
+
+.input-description {
+  width: 300px;
+  height: 35px;
+}
+.slider-item label {
+  margin: 30px 20px;
+}
+.registerbtn {
+  width: 100px;
+}
+
+.aboutSession {
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(220, 217, 217, 0.838);
+  padding: 100px;
+}
+.line {
+  width: 100px;
+  border-top: 4px solid rgb(106, 178, 237);
+  padding: 10px 10px 10px 10px;
+  margin-left: 45%;
+}
